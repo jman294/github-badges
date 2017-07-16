@@ -1,0 +1,25 @@
+{
+  "name": "github-badges",
+  "version": "1.0.0",
+  "description": "A badge maker",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jman294/github-badges.git"
+  },
+  "keywords": [
+    "badge",
+    "github",
+    "badges",
+    "creator"
+  ],
+  "author": "Jack DuPlessis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jman294/github-badges/issues"
+  },
+  "homepage": "https://github.com/jman294/github-badges#readme"
+}
