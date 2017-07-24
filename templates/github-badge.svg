@@ -1,6 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="200">
-  <rect width="300" height="200" fill="#FFFFFF" stroke="#000000" stroke-width="6px"/>
-  <text x="5" y="19">
+  <rect width="300" height="200" fill="#FFFFFF" stroke="#000000" stroke-width="6px" rx="5" ry="5"/>
+  <image xlink:href="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" x="10" y="52" height="96px" width="96px"/>
+
+  <text x="120" y="30" style="font-weight: bold; font-size: 15pt">
+    {{=it.user}}/{{=it.repo}}
+  </text>
+  <text x="120" y="70">
+    Watchers: {{=it.watchers}}
+  </text>
+  <text x="120" y="90">
+    Stars: {{=it.stars}}
+  </text>
+  <text x="120" y="110">
+    Forks: {{=it.forks}}
+  </text>
+  <text x="120" y="130">
     Commits: {{=it.commits}}
+  </text>
+  <text x="120" y="150">
+    Contributors: {{=it.contributors}}
   </text>
 </svg>

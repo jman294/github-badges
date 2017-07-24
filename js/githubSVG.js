@@ -7,8 +7,8 @@ const githubSVG = (function () {
 
   const templateFunction = dot.template(githubTemplate)
 
-  function createSVG (commits) {
-    let product = templateFunction({commits: commits})
+  function createSVG (data) {
+    let product = templateFunction(data)
     return product
   }
 

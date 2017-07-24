@@ -7,6 +7,8 @@ const githubInfo = (function () {
       'User-Agent': 'jman294'
     }
     let result = {}
+    result.user = user
+    result.repo = repo
 
     request(
     {

@@ -20,7 +20,7 @@ app.get('/makebadge/:user/:repo', function (req, res) {
         return
       }
       let info = githubInfo.getInfo(req.params.user, req.params.repo, function (error, result) {
-        svg = githubSVG.createSVG(result.commits)
+        svg = githubSVG.createSVG(result)
         res.set('Content-Type', 'image/svg+xml')
         res.send(svg)
       })
