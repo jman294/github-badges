@@ -18,5 +18,11 @@ describe('githubInfo', function () {
         done()
       })
     })
+    it('should throw an error for invalid repo', function (done) {
+      githubInfo.getInfo('jjjjjj', 'jjjjjjj', function (err, body) {
+        console.log(err)
+        done()
+      })
+    })
   })
 })

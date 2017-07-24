@@ -14,6 +14,9 @@ const githubInfo = (function () {
       headers: headers
     },
     function (error, response, body) {
+      if (response.statusCode === 404) {
+        callback(new Error('Invalid repository'))
+      }
       if (error) {
         callback(error)
         return
@@ -25,11 +28,11 @@ const githubInfo = (function () {
           return
         }
         let $ = cheerio.load(body)
-        result.commits = parseInt($('svg.octicon-history + span').text())
+        result.commits = $('svg.octicon-history + span').text().replace(/\s/g, '')
         result.defaultBranch = $('button i + span.js-select-button').text()
-        result.watchers = parseInt($('a[aria-label*="watching"]').text())
-        result.stars = parseInt($('a[aria-label*="starred"]').text())
-        result.forks = parseInt($('a[aria-label*="forked"]').text())
+        result.watchers = $('a[aria-label*="watching"]').text().replace(/\s/g, '')
+        result.stars = $('a[aria-label*="starred"]').text().replace(/\s/g, '')
+        result.forks = $('a[aria-label*="forked"]').text().replace(/\s/g, '')
         callback(undefined, result)
       })
     })
