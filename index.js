@@ -39,5 +39,6 @@ app.get('/makebadge/:user/:repo', function (req, res) {
     })
 })
 
-app.listen(3000, function () {
+app.listen(process.argv[2], function () {
+  console.log('running')
 })
