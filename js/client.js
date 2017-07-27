@@ -2,11 +2,12 @@ let button = document.getElementById('badge-button')
 let userInput = document.getElementById('user-input')
 let repoInput = document.getElementById('repo-input')
 let error = document.getElementById('error')
-
+let markdown = document.getElementById('markdown')
 
 button.addEventListener('click', function (e) {
   let user = userInput.value
   let repo = repoInput.value
+  let markdownTemplate = 'Markdown: [![github repository]('+location.protocol+'//'+window.location.host+'/makebadge/$USER/$REPO)](https://github.com/$USER/$REPO)'
 
   if (user === '' || repo === '') {
     return
@@ -21,11 +22,13 @@ button.addEventListener('click', function (e) {
         // Success!
         let data = this.responseText
         image.innerHTML = data
-        error.textContent = ''
-        console.log(data)
+        error.style.display = 'none'
+        markdown.textContent = markdownTemplate
+                               .replace(/\$USER/g, user)
+                               .replace(/\$REPO/g, repo)
       } else {
-        // Error :(
-        error.textContent = 'Invalid repository'
+        error.style.display = 'inline-block'
+        error.textContent = this.responseText
         image.innerHTML = ''
       }
     }

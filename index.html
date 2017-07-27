@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>GitHub Badges</Title>
+    <link rel="stylesheet" href="style/style.css" type="text/css"/>
   </head>
   <body>
-    <input type="text" id="user-input">/<input type="text" id="repo-input">
+    <h1>GitHub Badges</h1>
+    <h2>A badge maker for GitHub repositories</h2>
+    <br>
+    <div class="inputgroup">
+      <input type="text" name="username" id="user-input" class="input" required>
+      <label for="username">Username: </label>
+    </div>
+    <span id="slash">/</span>
+    <div class="inputgroup">
+      <input type="text" name="repository" id="repo-input" class="input" required>
+      <label for="repository">Repository: </label>
+    </div>
+    <br>
     <button id="badge-button">Make me a badge!</button>
     <br>
     <span id="error"></span>
     <span id="image"></span>
+    <p id="markdown"></p>
     <script src="/js/client.js"></script>
   </body>
 </html>

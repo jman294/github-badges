@@ -1,0 +1,74 @@
+body {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 0px;
+  font-weight: normal;
+  color: grey;
+}
+
+#slash {
+  font-size: 27pt;
+  font-weight: bold;
+  line-height: 80%;
+  padding-right: 5px;
+}
+
+#badge-button {
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(-180deg, #2fcb53 0%, #269f42 90%);
+  border: 1px solid rgba(27,31,35,0.2);
+  border-radius: 2px;
+  margin-top: 10px;
+  height: 26px;
+}
+
+.input {
+  height: 20px;
+  width: 150px;
+  font-size: 18pt;
+  padding-bottom: 5px;
+  margin-right: 5px;
+  border: none;
+  border-bottom: 2px solid grey;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.input:focus {
+  border-bottom-color: #2fcb53;
+  outline: none;
+}
+
+.input:focus ~ label, .input:valid ~ label {
+  color: #2fcb53;
+  top: -20px;
+  font-size: 10pt;
+}
+
+label {
+  position: absolute;
+  pointer-events: none;
+  top: 5px;
+  left: 5px;
+  transition: 0.2s ease all;
+}
+
+.inputgroup {
+  position: relative;
+  display: inline-block;
+}
+
+#error {
+  padding: 3px;
+  margin-top: 10px;
+  border: .5px solid red;
+  border-radius: 2px;
+  background-color: #ffa8a9;
+  display: none;
+}
