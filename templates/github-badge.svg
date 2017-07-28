@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="200">
   <rect width="300" height="200" fill="#FFFFFF" stroke="#000000" stroke-width="6px" rx="5" ry="5"/>
-  <image xlink:href="templates/GitHub-Mark.svg" x="10" y="52" height="96px" width="96px"/>
+  <image xlink:href="//templates/GitHub-Mark.svg" x="10" y="52" height="96px" width="96px"/>
 
   <text x="120" y="30" style="font-weight: bold; font-size: 15pt">
     {{=it.user}}/{{=it.repo}}

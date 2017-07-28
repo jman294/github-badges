@@ -16,8 +16,8 @@ app.get('/style/:file', function (req, res) {
   res.sendFile(`/style/${req.params.file}`, {root: __dirname})
 })
 
-app.get('/templates/:file', function (req, res) {
-  res.sendFile(`/templates/${req.params.file}`, {root: __dirname})
+app.get('/templates/GitHub-Mark.svg', function (req, res) {
+  res.sendFile('/templates/GitHub-Mark.svg', {root: __dirname})
 })
 
 app.get('/makebadge/:user/:repo', function (req, res) {
