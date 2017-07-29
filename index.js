@@ -19,12 +19,11 @@ app.get('/style/:file', function (req, res) {
 app.get('/makebadge/:user/:repo', function (req, res) {
   let svg = ''
   request(`https://github.com/${req.params.user}/${req.params.repo}`, function (error, response, body) {
-      if (response === undefined) {
-        res.status(400).send('There was an error')
-        return
-      }
-      if (response.statusCode >= 400) {
+      if (response !== undefined && response.statusCode >= 400) {
         res.status(400).send('Invalid repository')
+        return
+      } else if (response === undefined) {
+        res.status(400).send('There was an error')
         return
       }
       let info = githubInfo.getInfo(req.params.user, req.params.repo, function (error, result) {

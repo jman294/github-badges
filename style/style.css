@@ -72,3 +72,21 @@ label {
   background-color: #ffa8a9;
   display: none;
 }
+
+#markdown-label {
+  display: none;
+  margin-bottom: 0px;
+}
+
+#markdown {
+  font-family: monospace;
+  padding: 1px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  display: none;
+  margin-top: none;
+}
+
+#image svg {
+  margin-top: 10px;
+}
