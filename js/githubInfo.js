@@ -35,6 +35,9 @@ const githubInfo = (function () {
         result.watchers = $('a[aria-label*="watching"]').text().replace(/\s/g, '')
         result.stars = $('a[aria-label*="starred"]').text().replace(/\s/g, '')
         result.forks = $('a[aria-label*="forked"]').text().replace(/\s/g, '')
+        result.language = $('.repository-lang-stats-graph').children('span')[0].children[0].data
+        tmpLanguageStyle = $('.repository-lang-stats-graph').children('span')[0].attribs.style
+        result.languageColor = tmpLanguageStyle.slice(tmpLanguageStyle.indexOf('#'), -1)
         callback(undefined, result)
       })
     })

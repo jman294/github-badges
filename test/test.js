@@ -13,7 +13,7 @@ describe('githubSVG', function () {
 describe('githubInfo', function () {
   describe('#getInfo', function () {
     it('should return information for a github repo', function (done) {
-      githubInfo.getInfo('jman294', 'talkback', function (err, body) {
+      githubInfo.getInfo('chrislgarry', 'Apollo-11', function (err, body) {
         console.log(body)
         done()
       })
