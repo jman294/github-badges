@@ -23,7 +23,12 @@ const githubInfo = (function () {
         callback(error)
         return
       }
-      result.contributors = JSON.parse(body).length
+      try {
+        result.contributors = JSON.parse(body).length
+      } catch (e) {
+        callback(e)
+        return
+      }
       request(`https://github.com/${user}/${repo}`, function (error, response, body) {
         if (error) {
           callback(error)
