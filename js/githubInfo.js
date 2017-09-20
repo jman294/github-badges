@@ -26,7 +26,7 @@ const githubInfo = (function () {
       try {
         result.contributors = JSON.parse(body).length
       } catch (e) {
-        callback(e)
+        callback(new Error('Empty repository'))
         return
       }
       request(`https://github.com/${user}/${repo}`, function (error, response, body) {
