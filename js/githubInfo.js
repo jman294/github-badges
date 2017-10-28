@@ -40,9 +40,15 @@ const githubInfo = (function () {
         result.watchers = $('a[aria-label*="watching"]').text().replace(/\s/g, '')
         result.stars = $('a[aria-label*="starred"]').text().replace(/\s/g, '')
         result.forks = $('a[aria-label*="forked"]').text().replace(/\s/g, '')
-        result.language = $('.repository-lang-stats-graph').children('span')[0].children[0].data
-        tmpLanguageStyle = $('.repository-lang-stats-graph').children('span')[0].attribs.style
-        result.languageColor = tmpLanguageStyle.slice(tmpLanguageStyle.indexOf('#'), -1)
+        let tmpColorGraph = $('.repository-lang-stats-graph').children('span')[0]
+        if (tmpColorGraph !== undefined) {
+          result.language = tmpColorGraph.children[0].data
+          tmpLanguageStyle = tmpColorGraph.attribs.style
+          result.languageColor = tmpLanguageStyle.slice(tmpLanguageStyle.indexOf('#'), -1)
+        } else {
+          result.language = 'Unspecified'
+          result.languageColor = '#000000'
+        }
         callback(undefined, result)
       })
     })
