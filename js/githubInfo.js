@@ -23,11 +23,17 @@ const githubInfo = (function () {
         callback(error)
         return
       }
+      let jsonBody
       try {
-        result.contributors = JSON.parse(body).length
+        jsonBody = JSON.parse(body)
       } catch (e) {
         callback(new Error('Empty repository'))
         return
+      }
+      if (jsonBody.message === undefined) {
+        result.contributors = jsonBody.length + ''
+      } else {
+        result.contributors = '∞'
       }
       request(`https://github.com/${user}/${repo}`, function (error, response, body) {
         if (error) {
