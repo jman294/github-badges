@@ -5,11 +5,13 @@ const dot = require('dot')
 const githubSVG = (function () {
   const githubTemplate = fs.readFileSync(path.join(__dirname, '..', 'templates', 'github-badge.svg')).toString()
 
-  const repoCharLimit = 17
-  const statListingLimit = 20
-  const languageName = 18
+  const repoCharLimit = 15
+  const repoCharMult = 12
+  const statListingLimit = 22
+  const statListingCharMult = 6
+  const languageName = 20
 
-  const originalWidth = 300
+  const originalWidth = 304
 
   const templateFunction = dot.template(githubTemplate)
   const watcherString = ' watching'
@@ -29,13 +31,13 @@ const githubSVG = (function () {
 
     let pixelCountRecord = 0
     if (repoLength > repoCharLimit) {
-      pixelCountRecord = (repoLength - repoCharLimit) * 10
+      pixelCountRecord = (repoLength - repoCharLimit) * repoCharMult
     }
 
     for (let i = 0; i < statStrings.length; i++) {
       if (statStrings[i].length > statListingLimit) {
-        if (((statStrings[i].length - statListingLimit) * 2) > pixelCountRecord) {
-          pixelCountRecord = (statStrings[i].length - statListingLimit) * 3
+        if (((statStrings[i].length - statListingLimit) * statListingCharMult) > pixelCountRecord) {
+          pixelCountRecord = (statStrings[i].length - statListingLimit) * statListingCharMult
         }
       }
     }

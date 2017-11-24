@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{{=it.adjWidth}}" height="175">
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Inconsolata');
     text {
-      font-family: 'Inconsolata', sans-serif;
+      font-family: monospace;
     }
   </style>
   <g>
