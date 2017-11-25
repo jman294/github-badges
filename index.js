@@ -12,8 +12,8 @@ app.get('/js/client.js', function (req, res) {
   res.sendFile('/js/client.js', {root: __dirname})
 })
 
-app.get('/style/:file', function (req, res) {
-  res.sendFile(`/style/${req.params.file}`, {root: __dirname})
+app.get('/style/style.css', function (req, res) {
+  res.sendFile('/style/style.css', {root: __dirname})
 })
 
 app.get('/makebadge/:user/:repo', function (req, res) {
