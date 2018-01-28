@@ -33,6 +33,7 @@ app.get('/makebadge/:user/:repo', function (req, res) {
         }
         svg = githubSVG.createSVG(result)
         res.set('Content-Type', 'image/svg+xml')
+        res.set('ETag', Math.floor(Math.random()*1000))
         res.send(svg)
       })
     })
