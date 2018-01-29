@@ -35,11 +35,7 @@ app.get('/makebadge/:user/:repo', function (req, res) {
         res.set('Content-Type', 'image/svg+xml')
         //res.set('Expires', new Date().toUTCString())
         //res.set('Cache-Control', 'max-age=60')
-        let cacheSecs = 60;
-        res.setHeader('Cache-Control', 'max-age=' + cacheSecs);
-        let reqTime = new Date();
-        let date = (new Date(+reqTime + cacheSecs * 1000)).toGMTString();
-        res.setHeader('Expires', date);
+        res.set('Surrogate-Control', 'max-age=60')
         res.send(svg)
       })
     })
