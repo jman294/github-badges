@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="117" height="24" viewBox="0 0 117 24">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:700');
+text {
+  font-family: 'Ubuntu Mono', monospace;
+}
+</style>
+<path d="
+M 1 0
+h 115
+v 2
+h -115
+v -2
+M 0 1
+h 2
+v 22
+h -2
+v -22
+M 1 22
+h 115
+v 2
+h -115
+v -2
+M 115 1
+h 2
+v 22
+h -2
+v -22"
+fill="#959da5"/>
+<svg x="5" y="4" width="12px" height="16px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs></defs>
+<g id="Octicons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="repo" fill="#000000">
+<path d="M4,9 L3,9 L3,8 L4,8 L4,9 L4,9 Z M4,6 L3,6 L3,7 L4,7 L4,6 L4,6 Z M4,4 L3,4 L3,5 L4,5 L4,4 L4,4 Z M4,2 L3,2 L3,3 L4,3 L4,2 L4,2 Z M12,1 L12,13 C12,13.55 11.55,14 11,14 L6,14 L6,16 L4.5,14.5 L3,16 L3,14 L1,14 C0.45,14 0,13.55 0,13 L0,1 C0,0.45 0.45,0 1,0 L11,0 C11.55,0 12,0.45 12,1 L12,1 Z M11,11 L1,11 L1,13 L3,13 L3,12 L6,12 L6,13 L11,13 L11,11 L11,11 Z M11,1 L2,1 L2,10 L11,10 L11,1 L11,1 Z" id="Shape"></path>
+</g>
+</g>
+</svg>
+<text x="22" y="16" style="font-size: 13px" fill="#0266dd">
+npm
+</text>
+<text x="45" y="16" style="font-size: 15px" fill="black">
+/
+</text>
+<text x="55" y="16" style="font-size: 14px" fill="#0266dd">
+install
+</text>
+</svg>
