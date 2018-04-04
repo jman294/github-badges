@@ -7,8 +7,6 @@ const small = (function () {
 
   const templateFunction = dot.template(githubTemplate)
 
-  const timestampString = 'last commit '
-
   const usernameChar = 6.5
   const repoChar = 8
 

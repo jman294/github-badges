@@ -9,7 +9,7 @@ const medium = (function () {
 
   const timestampString = 'last commit '
 
-  const usernameChar = 5.3
+  const usernameChar = 5.1
   const repoChar = 7
   const bottomStatsChar = 7.5
 
