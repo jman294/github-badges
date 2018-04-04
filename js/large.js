@@ -2,10 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const dot = require('dot')
 
-const githubSVG = (function () {
+const large = (function () {
   const githubTemplate = fs.readFileSync(path.join(__dirname, '..', 'templates', 'large-badge.svg')).toString()
-
-  const originalWidth = 275
 
   const templateFunction = dot.template(githubTemplate)
 
@@ -15,7 +13,7 @@ const githubSVG = (function () {
   const issueString = ' issues'
   const timestampString = 'last commit '
 
-  const usernameChar = 6.2
+  const usernameChar = 6.5
   const repoChar = 7
   const bottomStatsChar = 5.5
 
@@ -79,4 +77,4 @@ const githubSVG = (function () {
   }
 })()
 
-module.exports = githubSVG
+module.exports = large
