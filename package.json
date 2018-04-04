@@ -26,8 +26,11 @@
     "cheerio": "^1.0.0-rc.2",
     "dot": "^1.1.2",
     "express": "^4.15.3",
+    "measure-text": "0.0.4",
     "phantom": "^4.0.4",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "time-ago": "^0.2.1",
+    "timeago.js": "^3.0.2"
   },
   "devDependencies": {
     "mocha": "^3.4.2"
