@@ -33,8 +33,6 @@ app.get('/makebadge/:user/:repo', function (req, res) {
         }
         svg = githubSVG.createSVG(result)
         res.set('Content-Type', 'image/svg+xml')
-        //res.set('Expires', new Date().toUTCString())
-        //res.set('Cache-Control', 'max-age=60')
         res.set('Surrogate-Control', 'max-age=60')
         res.set('Cache-Control', 'private')
         res.send(svg)
