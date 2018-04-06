@@ -1,22 +1,73 @@
-body {
-  text-align: center;
+header {
+  font-family: 'Fira Mono', monospace;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid grey;
+}
+
+header:before {
+  content:'';
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  background: grey;
+  border-bottom: 2px solid black;
+  transition: width .5s;
+}
+
+#side-head {
+  background-color: lightgreen;
+  display: inline-block;
+  float: left;
 }
 
 h1 {
-  margin-bottom: 10px;
+  display: inline-block;
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 20px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 h2 {
   margin-top: 0px;
+  margin-bottom: 10px;
   font-weight: normal;
   color: grey;
+  font-size: 15px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.inputgroup {
+  margin-top: 21px;
+  margin-left: 10px;
+  background-color: lightblue;
+  display: inline-block;
+  float: left;
+  font-size: 20px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+
+}
+
+.inputgroup label {
+  font-family: 'Fira Mono', monospace;
+}
+
+input {
+  float: right;
 }
 
 #slash {
-  font-size: 27pt;
-  font-weight: bold;
-  line-height: 80%;
-  padding-right: 5px;
+  float: left;
+  font-size: 25pt;
+  margin-top: 30px;
+  margin-left: 10px;
+  color: grey;
 }
 
 #badge-button {
@@ -26,67 +77,43 @@ h2 {
   border: 1px solid rgba(27,31,35,0.2);
   border-radius: 2px;
   margin-top: 10px;
-  height: 26px;
+  margin-left: 20px;
+  height: 40px;
 }
 
-.input {
-  height: 20px;
-  width: 150px;
-  font-size: 18pt;
-  padding-bottom: 5px;
-  margin-right: 5px;
-  border: none;
-  border-bottom: 2px solid grey;
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.input:focus {
-  border-bottom-color: #2fcb53;
-  outline: none;
-}
-
-.input:focus ~ label, .input:valid ~ label {
-  color: #2fcb53;
-  top: -20px;
-  font-size: 10pt;
-}
-
-label {
-  position: absolute;
-  pointer-events: none;
-  top: 5px;
-  left: 5px;
-  transition: 0.2s ease all;
-}
-
-.inputgroup {
-  position: relative;
-  display: inline-block;
+.badge {
+  text-align: center;
+  padding: 5px;
+  padding-bottom: 25px;
 }
 
 #error {
+  font-family: 'Fira Mono', monospace;
   padding: 3px;
   margin-top: 10px;
   border: .5px solid red;
-  border-radius: 2px;
   background-color: #ffa8a9;
   display: none;
 }
 
-#markdown-label {
-  display: none;
-  margin-bottom: 0px;
+.imgcon {
+  display: block;
+  margin-bottom: 10px;
 }
 
-#markdown {
+.markdown-label {
+  margin: 2px;
+  display: inline;
+}
+
+.markdown {
   font-family: monospace;
   padding: 1px;
   border: 1px solid grey;
   border-radius: 2px;
-  display: none;
-  margin-top: none;
+  margin-bottom: 5px;
 }
 
 #image svg {
-  margin-top: 10px;
+  margin-top: 20px;
 }
