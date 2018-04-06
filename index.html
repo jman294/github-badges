@@ -3,28 +3,43 @@
   <head>
     <title>GitHub Badges</Title>
     <link rel="stylesheet" href="style/style.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
   </head>
   <body>
-    <h1>GitHub Badges</h1>
-    <h2>A badge maker for GitHub repositories</h2>
-    <br>
-    <div class="inputgroup">
-      <input type="text" name="username" id="user-input" class="input" required>
-      <label for="username">Username: </label>
+    <header>
+      <div id="side-head">
+        <h1>GitHub Badges</h1>
+        <h2>A badge maker for GitHub repositories</h2>
+      </div>
+      <div class="inputgroup">
+        <label for="username">Username: </label>
+        <br>
+        <input type="text" name="username" id="user-input" class="input" required>
+      </div>
+      <span id="slash">/</span>
+      <div class="inputgroup">
+        <label for="repository">Repository: </label>
+        <br>
+        <input type="text" name="repository" id="repo-input" class="input" required>
+      </div>
+      <!--<button id="badge-button">Make me a badge!</button>-->
+    </header>
+    <span id="error">Error</span>
+    <div id="badge-large" class="badge">
+      <span class="imgcon"><img class="image" src="//localhost:8000/makebadge/jman294/github-badges"></span>
+      <p class="markdown-label">Markdown: </p>
+      <code class="markdown">[![Github badge](https://gb-maker.herokuapp.com/makebadge/jman294/github-badges)](https://github.com/jman294/github-badges)</code>
     </div>
-    <span id="slash">/</span>
-    <div class="inputgroup">
-      <input type="text" name="repository" id="repo-input" class="input" required>
-      <label for="repository">Repository: </label>
+    <div id="badge-medium" class="badge">
+      <span class="imgcon"><img class="image" src="//localhost:8000/makebadge/medium/jman294/github-badges"></span>
+      <p class="markdown-label">Markdown: </p>
+      <code class="markdown">[![Github badge](https://gb-maker.herokuapp.com/makebadge/medium/jman294/github-badges)](https://github.com/jman294/github-badges)</code>
     </div>
-    <br>
-    <button id="badge-button">Make me a badge!</button>
-    <br>
-    <span id="error"></span>
-    <span id="image"></span>
-    <br>
-    <p id="markdown-label">Markdown: </p>
-    <code id="markdown"></code>
+    <div id="badge-small" class="badge">
+      <span class="imgcon"><img class="image" src="//localhost:8000/makebadge/small/jman294/github-badges"></span>
+      <p class="markdown-label">Markdown: </p>
+      <code class="markdown">[![Github badge](https://gb-maker.herokuapp.com/makebadge/small/jman294/github-badges)](https://github.com/jman294/github-badges)</code>
+    </div>
     <script src="/js/client.js"></script>
   </body>
 </html>

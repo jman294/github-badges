@@ -1,63 +1,65 @@
-let button = document.getElementById('badge-button')
-let userInput = document.getElementById('user-input')
-let repoInput = document.getElementById('repo-input')
-let error = document.getElementById('error')
-let markdown = document.getElementById('markdown')
-let markdownLabel = document.getElementById('markdown-label')
+var badgeDivs = document.getElementsByClassName('badge')
+var imgEls = document.getElementsByClassName('image')
+var inputs = document.getElementsByClassName('input')
+var markdowns = document.getElementsByClassName('markdown')
+var timeout = 0
 
-button.addEventListener('click', function(e) {
-  let user = userInput.value
-  let repo = repoInput.value
-  let markdownTemplate = '[![github repository](' + location.protocol + '//' + window.location.host + '/makebadge/$USER/$REPO)](https://github.com/$USER/$REPO)'
+var LARGE = 0
+var MEDIUM = 1
+var SMALL = 2
 
-  if (user === '' || repo === '') {
-    return
-  }
+var host = 'http://localhost:8000'
+var apiList = ['/makebadge', '/makebadge/medium', '/makebadge/small']
 
-  let request = new XMLHttpRequest();
-  request.open('GET', `/makebadge/${user}/${repo}`, true);
-
-  request.onreadystatechange = function() {
-    if (this.readyState === 4) {
-      if (this.status >= 200 && this.status < 400) {
-        // Success!
-        let data = this.responseText
-        image.innerHTML = data
-        error.style.display = 'none'
-        markdownLabel.style.display = 'inline-block'
-        markdown.style.display = 'inline-block'
-        markdown.textContent = markdownTemplate
-          .replace(/\$USER/g, user)
-          .replace(/\$REPO/g, repo)
-      } else {
-        error.style.display = 'inline-block'
-        markdownLabel.style.display = 'none'
-        error.textContent = this.responseText
-        image.innerHTML = ''
-        markdown.textContent = ''
-        markdown.style.display = 'none'
+function setImages () {
+  var svgs = []
+  getBadgeSvg(inputs[0].value, inputs[1].value, 0, function (type, user, repo) {
+    if (this.status !== 200) {
+      // Error
+      setErrorVisible(true, this.responseText)
+      return;
+    } else {
+      for (var i = 0; i < imgEls.length; i++) {
+        markdowns[i].textContent = getMarkdown(i, user, repo)
+        imgEls[i].src = host + apiList[i] + '/' + user + '/' + repo
       }
     }
-  }
+  })
+}
 
-  request.send();
-  request = null;
-})
+function getBadgeSvg (user, repo, type, callback) {
+  var req = new XMLHttpRequest()
+  req.addEventListener('load', function () {callback.call(this, type, user, repo)})
+  req.open('GET', host + apiList[type] + '/' + user + '/' + repo)
+  req.send()
+}
 
-markdown.addEventListener('click', function(e) {
-  selectText(markdown)
-})
+function setErrorVisible (visible, text) {
+  var error = document.getElementById('error')
+  return (function () {
+    if (visible) {
+      error.style.display = 'block'
+    } else {
+      error.style.display = 'none'
+    }
+    error.textContent = text
+  })()
+}
 
-function selectText(node) {
+function getMarkdown (type, user, repo) {
+  var pc = window.location.protocall
+  var host = window.location.host
+  return '[![GitHub Repository Badge]('+pc+host+apiList[type]+'/'+user+'/'+repo+')](https://github.com/'+user+'/'+repo
+}
 
-  if (document.selection) {
-    let range = document.body.createTextRange();
-    range.moveToElementText(node);
-    range.select();
-  } else if (window.getSelection) {
-    let range = document.createRange();
-    range.selectNodeContents(node);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-  }
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('input', function () {
+    setErrorVisible(false)
+    clearTimeout(timeout)
+    timeout = setTimeout(function () {
+      if (inputs[0].value !== '' && inputs[1].value !== '') {
+        setImages()
+      }
+    }, 1000)
+  })
 }
