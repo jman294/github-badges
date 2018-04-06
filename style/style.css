@@ -13,7 +13,7 @@ header:before {
   width: 0%;
   background: grey;
   border-bottom: 2px solid black;
-  transition: border-bottom 5s;
+  transition: width .5s;
 }
 
 #side-head {

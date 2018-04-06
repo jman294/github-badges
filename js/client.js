@@ -58,9 +58,9 @@ function setErrorVisible (visible, text) {
 }
 
 function getMarkdown (type, user, repo) {
-  var pc = window.location.protocall
+  var pc = window.location.protocol
   var host = window.location.host
-  return '[![GitHub Repository Badge](' + pc + host + apiList[type] + '/' + user + '/' + repo + ')](https://github.com/' + user + '/' + repo
+  return '[![GitHub Repository Badge](' + pc + '//' + host + apiList[type] + '/' + user + '/' + repo + ')](https://github.com/' + user + '/' + repo+ ')'
 }
 
 for (var i = 0; i < inputs.length; i++) {
