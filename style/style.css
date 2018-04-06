@@ -1,8 +1,19 @@
 header {
   font-family: 'Fira Mono', monospace;
   display: inline-block;
-  border-bottom: 2px solid black;
   width: 100%;
+  position: relative;
+  border-bottom: 2px solid grey;
+}
+
+header:before {
+  content:'';
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  background: grey;
+  border-bottom: 2px solid black;
+  transition: border-bottom 5s;
 }
 
 #side-head {
@@ -31,7 +42,7 @@ h2 {
 }
 
 .inputgroup {
-  margin-top: 25px;
+  margin-top: 21px;
   margin-left: 10px;
   background-color: lightblue;
   display: inline-block;
@@ -39,6 +50,8 @@ h2 {
   font-size: 20px;
   padding-left: 4px;
   padding-right: 4px;
+  padding-bottom: 4px;
+
 }
 
 .inputgroup label {
@@ -75,10 +88,10 @@ input {
 }
 
 #error {
+  font-family: 'Fira Mono', monospace;
   padding: 3px;
   margin-top: 10px;
   border: .5px solid red;
-  border-radius: 2px;
   background-color: #ffa8a9;
   display: none;
 }
@@ -102,5 +115,5 @@ input {
 }
 
 #image svg {
-  margin-top: 10px;
+  margin-top: 20px;
 }
