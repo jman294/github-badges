@@ -9,7 +9,7 @@ var LARGE = 0
 var MEDIUM = 1
 var SMALL = 2
 
-var host = 'http://localhost:8000'
+var host = window.location.protocol + '//' + window.location.host
 var apiList = ['/makebadge', '/makebadge/medium', '/makebadge/small']
 
 function setImages () {
