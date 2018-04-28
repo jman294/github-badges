@@ -8,13 +8,17 @@ const githubInfo = (function () {
     request(
         {url: `https://github.com/${user}/${repo}`,
           headers: {
-            'User-Agent': 'github'
+            'User-Agent': 'jman294 github-badges'
           }
         },
         function (error, response, body) {
           if (error) {
             callback(error)
-              return
+            return
+          }
+          if (response && response.statusCode >= 400) {
+            callback(new Error())
+            return
           }
 
           const undefinedString = 'unknown'
@@ -50,13 +54,13 @@ const githubInfo = (function () {
           request(
               {url: `https://api.github.com/repos/${user}/${repo}/commits/master`,
                 headers: {
-                  'User-Agent': 'github'
+                  'User-Agent': 'jman294 github-badges'
                 }
               },
               function (error, response, body) {
                 if (error) {
                   callback(error)
-                    return
+                  return
                 }
                 let lastCommit = JSON.parse(body)
                 if (lastCommit.commit !== undefined) {
