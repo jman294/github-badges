@@ -13,8 +13,8 @@ const large = (function () {
   const issueString = ' issues'
   const timestampString = 'last commit '
 
-  const usernameChar = 6
-  const repoChar = 7
+  const usernameChar = 8
+  const repoChar = 9.8
   const bottomStatsChar = 7
 
   const makeParcel = function (strings, width) {
