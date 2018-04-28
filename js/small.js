@@ -7,8 +7,8 @@ const small = (function () {
 
   const templateFunction = dot.template(githubTemplate)
 
-  const usernameChar = 6.5
-  const repoChar = 8
+  const usernameChar = 7.5
+  const repoChar = 8.5
 
   const createSVG = function (data) {
     let userWidth = data.user.length * usernameChar

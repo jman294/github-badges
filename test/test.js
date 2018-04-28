@@ -4,10 +4,10 @@ const assert = require('assert')
 describe('githubInfo', function () {
   describe('getInfo', function () {
     it('should return object with correct stats for valid repo', function (done) {
-      githubInfo.getInfo('jman294', 'github-badges', function (err, result) {
+      githubInfo.getInfo('jman294', 'clock', function (err, result) {
         assert(err === undefined);
         assert.equal(result.user, 'jman294')
-        assert.equal(result.repo, 'github-badges')
+        assert.equal(result.repo, 'clock')
         assert.notEqual(result.contributors, undefined)
         assert.notEqual(result.commits, undefined)
         assert.notEqual(result.defaultBranch, undefined)

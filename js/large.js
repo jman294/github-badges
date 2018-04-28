@@ -13,9 +13,9 @@ const large = (function () {
   const issueString = ' issues'
   const timestampString = 'last commit '
 
-  const usernameChar = 6.5
+  const usernameChar = 6
   const repoChar = 7
-  const bottomStatsChar = 5.5
+  const bottomStatsChar = 7
 
   const makeParcel = function (strings, width) {
     let parcel = {}

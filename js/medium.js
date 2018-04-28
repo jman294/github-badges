@@ -9,8 +9,8 @@ const medium = (function () {
 
   const timestampString = 'last commit '
 
-  const usernameChar = 5.1
-  const repoChar = 7
+  const usernameChar = 7.5
+  const repoChar = 9.8
   const bottomStatsChar = 7.5
 
   const createSVG = function (data) {
