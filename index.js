@@ -4,7 +4,10 @@ const mediumBadge = require('./js/medium')
 const smallBadge = require('./js/small')
 const githubInfo = require('./js/githubInfo')
 const express = require('express')
+const sslRedirect = require('heroku-ssl-redirect')
 const app = express()
+
+app.use(sslRedirect())
 
 app.get('/', function (req, res) {
   res.sendFile('/index.html', {root: __dirname})
@@ -91,5 +94,5 @@ app.get('/makebadge/:user/:repo', function (req, res) {
 })
 
 app.listen(process.argv[2], function () {
-  console.log('running')
+  console.log('running', process.argv[2])
 })
