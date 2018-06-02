@@ -11,7 +11,7 @@ const medium = (function () {
 
   const usernameChar = 6.5
   const repoChar = 8.5
-  const bottomStatsChar = 7.5
+  const bottomStatsChar = 9
 
   const createSVG = function (data) {
     let userWidth = data.user.length * usernameChar
