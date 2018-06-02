@@ -26,8 +26,8 @@ const githubInfo = (function () {
           let $ = cheerio.load(body)
             result.user = user
             result.repo = repo
-            result.contributors = $('svg.octicon-organization + span').text()
-            .replace(/\s/g, '') || undefinedString
+            //result.contributors = $('svg.octicon-organization + span').text()
+            //.replace(/\s/g, '') || undefinedString
             result.commits = $('svg.octicon-history + span').text()
             .replace(/\s/g, '') || undefinedString
             result.defaultBranch = $('button i + span.js-select-button').text()

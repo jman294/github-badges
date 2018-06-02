@@ -9,7 +9,7 @@ const large = (function () {
 
   const starString = '★'
   const commitString = ' commits'
-  const contributorString = ' contributors'
+  const forkString = ' forks'
   const issueString = ' issues'
   const timestampString = 'last commit '
 
@@ -40,7 +40,7 @@ const large = (function () {
 
     let leftStrings =
         [timestampString + data.timestampRelative,
-         data.contributors + contributorString]
+         data.forks + forkString]
     let leftParcel = makeParcel(leftStrings, bottomStatsChar)
     let rightStart = leftParcel.width + leftStart + 20
 
@@ -64,7 +64,7 @@ const large = (function () {
     data.repoStart = data.slashStart + repoChar + 2
 
     data.timestamp = leftStrings[0]
-    data.contributors = leftStrings[1]
+    data.forks = leftStrings[1]
     data.commits = rightStrings[0]
     data.issues = rightStrings[1]
 

@@ -50,7 +50,7 @@ v -67"
     {{=it.timestamp}}
 </text>
 <text x="48" y="47" font-size="12px" fill="#919190">
-    {{=it.contributors}}
+    {{=it.forks}}
 </text>
 <text x="{{=it.rightStart}}" y="35" font-size="12px" fill="#919190">
     {{=it.commits}}
